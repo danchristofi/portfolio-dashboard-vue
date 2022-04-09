@@ -1,0 +1,213 @@
+@import "reset";
+@import "mixins";
+@import "window-breakpoints";
+
+@import "colour-utilities";
+@import "display-utils";
+@import "spacing-utilities";
+@import "typography";
+@import "animations";
+
+:root {
+  //Colours
+  --accent: 199, 89, 131;
+
+  --grey1: 14, 23, 42;
+  --grey2: 30, 40, 58;
+  --grey3: 51, 65, 85;
+  --grey4: 70, 84, 105;
+  --grey5: 100, 115, 138;
+  --grey6: 147, 162, 183;
+  --grey7: 203, 212, 224;
+  --grey8: 225, 231, 240;
+  --grey9: 240, 245, 248;
+  --grey10: 248, 249, 251;
+  --white: 255, 255, 255;
+  --black: 10, 17, 29;
+  --contrast: 0, 0, 0;
+  --contrastMatch: 255, 255, 255;
+
+  --bgContrast: var(--grey7);
+  --bgContrastVFaded: rgba(var(--bgContrast), 0.1);
+  --bgContrastFaded: rgba(var(--bgContrast), 0.18);
+  --bgContrastDefault: rgba(var(--bgContrast), 0.4);
+  --bgContrastSolid: rgba(var(--bgContrast), 1);
+
+  --bodyBg: var(--grey9);
+
+  //Spacing
+  --sp1: 0.2rem;
+  --sp2: 0.4rem;
+  --sp3: 0.6rem;
+  --sp4: 0.8rem;
+  --sp5: 1rem;
+  --sp6: 1.2rem;
+  --sp7: 1.4rem;
+  --sp8: 1.6rem;
+  --sp9: 1.8rem;
+  --sp10: 2rem;
+  --spV: 5rem;
+
+  //Sizing
+  font-size: calc(16px * 0.8);
+
+  --columnWidth: #{toRem(252)};
+  --columnGap: var(--sp10);
+  --columnCount: 5;
+  --scrollBarWidth: 5px;
+  --headerHeight: #{toRem(90)};
+
+  --textXxl: #{toRem(28)};
+  --textXl: #{toRem(24)};
+  --textLg: #{toRem(22)};
+  --textMd: #{toRem(16)};
+  --textBody: #{toRem(16)};
+  --textBodySm: #{toRem(14)};
+  --textSm: #{toRem(12)};
+  --textTiny: #{toRem(10)};
+
+  --rad: 0.5rem;
+  --radSm: 0.35rem;
+
+  &.low-density {
+    font-size: 15px;
+  }
+
+  ::selection {
+    color: white;
+    background: black;
+  }
+
+  &.dark {
+    --bodyBg: var(--grey1);
+    --contrast: 255, 255, 255;
+    --bgContrast: var(--grey4);
+    --contrastMatch: var(--grey1);
+
+    body {
+      color: cl("grey9");
+    }
+
+    ::selection {
+      color: black;
+      background: white;
+    }
+  }
+
+  @include screen($screenSm) {
+    font-size: 11px;
+  }
+}
+
+body {
+  background: cl("bodyBg");
+  color: cl("grey4");
+  font-family: capitana, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--headerHeight);
+  overflow-y: scroll;
+
+  @include screen($screenXl) {
+    --columnCount: 4;
+  }
+
+  @include screen($screenLg) {
+    --columnCount: 3;
+  }
+
+  @include screen($screenMd) {
+    --columnCount: 2;
+    --columnGap: 4vw;
+    --columnWidth: calc(
+      ((100vw - var(--scrollBarWidth)) * 0.45) - var(--columnGap)
+    );
+    --spV: 4rem;
+
+    --textXxl: #{toRem(24)};
+    --textXl: #{toRem(22)};
+    --textLg: #{toRem(20)};
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: cl("contrast", 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: cl("contrast", 0.3);
+  }
+
+  &.modal-open {
+    overflow: hidden;
+    padding-right: var(--scrollBarWidth);
+  }
+}
+
+.scroll-styling {
+  --sw: 0.2rem;
+  --p: 0.8rem;
+  overflow-y: auto !important;
+  padding-right: var(--p);
+
+  &--no-padding {
+    padding-right: 0;
+  }
+  &--offset {
+    margin-right: calc((var(--p) + var(--sw)) * -1);
+  }
+
+  &::-webkit-scrollbar {
+    width: var(--sw);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: cl("contrast", 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: cl("contrast", 0.3);
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: var(--sp5);
+  }
+}
+
+.hr {
+  border-top: 1px solid var(--bgContrastDefault);
+  width: 100%;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.svgIcon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+  width: 2.8rem;
+  aspect-ratio: 1/1;
+  &.lg {
+    width: 2.8rem;
+  }
+  &.md {
+    width: 2rem;
+  }
+  &.sm {
+    width: 1.5rem;
+  }
+  &.xs {
+    width: 1rem;
+  }
+  &.thick {
+    stroke-width: 2px;
+  }
+}

@@ -1,0 +1,27 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-left-enter-active {
+  transform-origin: right center;
+  transition: all 0.3s;
+  transition-timing-function: cubic-bezier(0, 0.2, 0.25, 1), linear, linear;
+}
+
+.slide-left-leave-active {
+  transform-origin: right center;
+  transition: all 0.3s;
+  transition-timing-function: cubic-bezier(0.8, 0, 0.6, 1), linear, linear;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+  transform: translateX(20%);
+  opacity: 0;
+}

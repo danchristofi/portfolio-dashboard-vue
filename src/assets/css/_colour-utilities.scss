@@ -1,0 +1,39 @@
+.bg-contrast {
+  &--faded {
+    background: var(--bgContrastFaded);
+  }
+
+  &--default {
+    background: var(--bgContrastDefault);
+  }
+
+  &--solid {
+    background: var(--bgContrastSolid);
+  }
+
+  &--match {
+    background: cl("white");
+    @include dark {
+      background: cl("black");
+    }
+  }
+
+  &--accent {
+    background: cl("accent");
+    color: #fff;
+    &.glow {
+      box-shadow: 0 2rem 3rem -1rem #{cl("accent", 0.5)};
+      @include dark {
+        box-shadow: 0 2rem 3rem -1rem #{cl("accent", 0.3)};
+      }
+    }
+  }
+}
+
+.text-faded {
+  opacity: 0.7;
+}
+
+.text-faded-2 {
+  opacity: 0.3;
+}

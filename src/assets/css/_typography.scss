@@ -1,0 +1,94 @@
+p {
+  line-height: 1.8em;
+  margin-bottom: 1.4em;
+  &:last-child,
+  &:only-child {
+    margin-bottom: 0;
+  }
+}
+
+i {
+  font-style: italic;
+}
+
+.text-xxl {
+  font-size: var(--textXxl);
+  font-weight: 500;
+  margin-bottom: 0.6em;
+}
+
+.text-xl {
+  font-size: var(--textXl);
+  font-weight: 500;
+  margin-bottom: 0.8em;
+}
+
+.text-lg {
+  font-size: var(--textLg);
+  font-weight: 500;
+  margin-bottom: 0.8em;
+}
+
+.text-md {
+  font-size: var(--textMd);
+  font-weight: 500;
+  margin-bottom: 0.8em;
+}
+
+.text-body-sm {
+  font-size: var(--textBodySm);
+  font-weight: 500;
+  margin-bottom: 0.8em;
+}
+
+.text-sm {
+  font-size: var(--textSm);
+  font-weight: 400;
+}
+.text-tiny {
+  font-size: var(--textTiny);
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+strong,
+b,
+.bold {
+  font-weight: bolder;
+}
+
+.lighter {
+  font-weight: lighter;
+}
+.font-normal {
+  font-weight: normal;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tt-capitalize {
+  text-transform: capitalize;
+}
+
+.clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wsnw {
+  white-space: nowrap;
+}
