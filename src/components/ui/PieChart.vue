@@ -68,6 +68,7 @@ export default {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+
   span {
     font-size: 50%;
     font-weight: lighter;

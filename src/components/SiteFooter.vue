@@ -102,27 +102,34 @@ footer {
 .main {
   padding: var(--spV) 0;
   display: flex;
+
   @include screen($screenLg) {
     flex-wrap: wrap;
   }
+
   ul {
     width: auto;
     margin-right: 10%;
     white-space: nowrap;
+
     @include screen($screenLg) {
       width: 33%;
       margin: 0;
     }
+
     @include screen($screenSm) {
       width: 100%;
       margin-bottom: var(--spV);
+
       &:last-of-type {
         margin-bottom: 0;
       }
     }
+
     h6 {
       margin-bottom: 1em;
     }
+
     a {
       padding: 0.3em 0;
     }
@@ -135,12 +142,15 @@ footer {
   align-items: center;
   border-top: 1px solid rgba(var(--contrast), 0.2);
   padding: 1rem 0;
+
   @include screen($screenSm) {
     padding: var(--spV) 0;
   }
+
   ul {
     display: flex;
     align-items: center;
+
     @include screen($screenSm) {
       flex-direction: column;
       width: 100%;
@@ -149,8 +159,10 @@ footer {
       }
     }
   }
+
   a {
     padding: 0.6rem 1rem;
+
     @include screen($screenSm) {
       padding-left: 0;
     }
@@ -159,6 +171,7 @@ footer {
 
 aside {
   flex-grow: 1;
+
   @include screen($screenLg) {
     width: 100%;
     margin-bottom: var(--spV);

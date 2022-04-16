@@ -1,5 +1,5 @@
 <template>
-  <div class="section-title" :class="[{ sm: sm }, { 'has-border': hasBorder }]">
+  <div class="section-title" :class="[{ sm }, { 'has-border': hasBorder }]">
     <h2>
       <Icon :name="icon" :size="sm ? 'md' : 'lg'" /> {{ title }}
       <span
@@ -55,14 +55,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   &.has-border {
     padding-bottom: 0.65em;
     margin-bottom: 0.85em;
     border-bottom: 1px solid var(--bgContrastDefault);
   }
+
   h2 {
     display: flex;
     align-items: center;
+
     svg {
       margin-right: 0.4em;
       opacity: 0.5;

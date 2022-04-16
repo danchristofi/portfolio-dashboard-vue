@@ -38,6 +38,7 @@ export default {
   background-position: center center;
   box-shadow: 0 2rem 3rem -1.5rem cl("grey1", 0.5);
   filter: grayscale(0.7);
+
   @include dark() {
     box-shadow: 0 2rem 3rem -1.5rem cl("black", 0.9);
   }

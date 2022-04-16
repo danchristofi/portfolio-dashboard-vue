@@ -49,8 +49,8 @@
             :class="link.text === 'Home' ? 'active' : 'inactive'"
           >
             <Icon :name="link.icon" class="mr-5 text-faded" />
-            {{ link.text }}</a
-          >
+            {{ link.text }}
+          </a>
         </li>
       </ul>
     </SideBar>
@@ -168,6 +168,7 @@ header {
 
   @include screen($screenMd) {
     background: cl("grey8");
+
     @include dark() {
       background: cl("grey3");
     }
@@ -176,12 +177,14 @@ header {
   .modal-open & {
     width: calc(100% - var(--scrollBarWidth));
   }
+
   nav {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   ul {
     display: flex;
     li {
@@ -196,6 +199,7 @@ header {
 .inactive {
   opacity: 0.3;
 }
+
 .active {
   opacity: 1;
 }
@@ -222,6 +226,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   span {
     background: currentColor;
     height: 2px;
@@ -240,6 +245,7 @@ header {
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
+
   &:after {
     content: "";
     width: 100%;
@@ -250,6 +256,7 @@ header {
     border-radius: 100%;
     box-shadow: inset 0 0 0 2px #{cl("contrast", 0.2)};
   }
+
   img {
     object-fit: cover;
     width: 100%;

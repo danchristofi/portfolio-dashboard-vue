@@ -1,7 +1,11 @@
 <template>
   <div
     class="panel bg-contrast"
-    :class="[`bg-contrast--${bg}`, `panel--${size}`]"
+    :class="[
+      `bg-contrast--${bg}`,
+      `panel--${size}`,
+      { 'panel--shadow': shadow },
+    ]"
   >
     <div class="panel__inner" :class="innerClasses">
       <slot />
@@ -35,6 +39,10 @@ export default {
         );
       },
     },
+    shadow: {
+      type: Boolean,
+      default: false,
+    },
     innerClasses: {
       type: String,
       default: "",
@@ -63,6 +71,7 @@ export default {
     padding: var(--py) var(--px);
     overflow-x: hidden;
     overflow-y: auto;
+
     &::-webkit-scrollbar {
       width: 0.2rem;
     }
@@ -75,6 +84,7 @@ export default {
       background: cl("contrast", 0.3);
     }
   }
+
   &__footer {
     padding: calc(var(--py) * 0.6) var(--px);
     border-radius: 0 0 var(--rad) var(--rad);
@@ -95,6 +105,10 @@ export default {
   &--xl {
     --py: 3.6rem;
     --px: 3.8rem;
+  }
+
+  &--shadow {
+    box-shadow: 0 3rem 3rem -1.5rem rgba(black, 0.1);
   }
 }
 </style>

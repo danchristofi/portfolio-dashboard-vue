@@ -6,7 +6,7 @@
       :key="color"
       :class="{ active: index === active }"
       :style="{ background: `rgba(${color}, 1)` }"
-    ></button>
+    />
   </div>
 </template>
 
@@ -53,6 +53,7 @@ button {
 
   &.active {
     cursor: auto;
+
     &:after {
       width: 40%;
       height: 40%;

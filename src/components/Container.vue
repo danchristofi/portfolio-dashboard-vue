@@ -18,6 +18,7 @@ export default {
 
 .container {
   width: 100%;
+
   .inner {
     --x: calc(var(--columnWidth) * var(--columnCount));
     --y: calc(var(--x) + (var(--columnCount) * var(--columnGap)));

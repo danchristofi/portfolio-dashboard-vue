@@ -91,12 +91,14 @@ onMounted(() => {
     display: none;
   }
 }
+
 :deep(.basic-grid.count-3) {
   > *:nth-child(5),
   > *:nth-child(4) {
     display: none;
   }
 }
+
 :deep(.basic-grid.count-2) {
   > *:nth-child(5),
   > *:nth-child(4),
@@ -109,6 +111,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: calc(var(--columnGap) * 2);
+
   &.compact {
     grid-template-columns: 1fr;
     grid-gap: var(--columnGap);

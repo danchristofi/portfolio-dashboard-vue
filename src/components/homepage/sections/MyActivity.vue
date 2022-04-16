@@ -23,7 +23,7 @@
 
         <Panel
           bg="match"
-          style="box-shadow: 0 3rem 3rem -1.5rem rgba(0, 0, 0, 0.1)"
+          shadow
           inner-classes="flex jcc"
           :class="cBp < bps.lg ? 'w-100 mt-10' : 'w-1/3'"
         >

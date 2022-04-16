@@ -130,6 +130,7 @@ export default {
   overflow: hidden;
   border: 1px solid var(--bgContrastDefault);
   border-radius: var(--rad);
+
   hr {
     border-color: var(--bgContrastDefault);
     border-style: solid;
@@ -138,6 +139,7 @@ export default {
     height: 100%;
     width: 0;
     margin: 0;
+
     &.hz {
       width: 100%;
       height: 0;

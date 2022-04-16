@@ -55,9 +55,11 @@ export default {
   flex-direction: column;
   width: 100%;
   max-width: 30rem;
+
   .bars {
     display: flex;
     width: 100%;
+
     div {
       background: var(--bgContrastDefault);
       width: 4px;
@@ -79,12 +81,14 @@ export default {
         left: 50%;
         transform: translateX(-50%);
       }
+
       span {
         width: 100%;
         display: block;
         background: cl("grey6");
         margin-top: auto;
         border-radius: 999px;
+
         &.active {
           background: cl("accent");
         }

@@ -1,5 +1,5 @@
 <template>
-  <span class="pill" :class="`pill--${theme} ${size}`">{{ text }}</span>
+  <span class="pill" :class="`pill--${theme} pill--${size}`">{{ text }}</span>
 </template>
 
 <script>
@@ -8,7 +8,10 @@ export default {
   props: {
     size: {
       type: String,
-      default: "default",
+      default: "md",
+      validator: function (value) {
+        return ["sm", "md"].indexOf(value) !== -1;
+      },
     },
     text: {
       type: String,
@@ -37,6 +40,7 @@ export default {
   &--contrast {
     background: cl("grey1");
     color: cl("grey10");
+
     @include dark() {
       background: cl("grey10");
       color: cl("grey1");
@@ -48,7 +52,7 @@ export default {
     background: var(--bgContrastDefault);
   }
 
-  &.sm {
+  &--sm {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     font-size: var(--textSm);

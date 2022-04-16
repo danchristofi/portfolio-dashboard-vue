@@ -86,6 +86,7 @@ export default {
     @include dark() {
       box-shadow: 0 2.3rem 3rem -1.5rem cl("black", 0.9);
     }
+
     .pages,
     .pages span {
       width: 96%;
@@ -108,6 +109,7 @@ export default {
   &.isCollection {
     .img {
       overflow: hidden;
+
       &:after {
         content: "";
         position: absolute;
@@ -126,6 +128,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     svg {
       color: cl("white");
       filter: drop-shadow(0 0 0.3rem rgba(white, 0.8));

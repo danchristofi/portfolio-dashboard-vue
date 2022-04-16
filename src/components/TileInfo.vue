@@ -1,5 +1,5 @@
 <template>
-  <div class="TileInfo" :class="{ compact: compact }">
+  <div class="TileInfo" :class="{ compact }">
     <div class="info">
       <div class="tabs">
         <Tab v-if="createdByMe" size="sm" icon="user" theme="accent" />
@@ -94,10 +94,12 @@ export default {
   display: flex;
   padding-right: 3rem;
   align-items: flex-start;
+
   &.compact {
     padding-right: 0;
   }
 }
+
 .info {
   width: 9rem;
   flex-shrink: 0;
@@ -108,6 +110,7 @@ export default {
   border-radius: var(--rad);
   overflow: hidden;
   padding: 0.5rem;
+
   .img {
     width: 100%;
     aspect-ratio: 1/1;
@@ -116,6 +119,7 @@ export default {
     background-size: cover;
     border-radius: var(--radSm);
   }
+
   .tabs {
     position: absolute;
     display: flex;
@@ -131,6 +135,7 @@ export default {
 .details {
   margin-left: 2rem;
   padding-top: 1rem;
+
   hr {
     border-top: 1px solid var(--bgContrastDefault);
     width: 100%;

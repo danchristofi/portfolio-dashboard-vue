@@ -184,6 +184,7 @@ section {
   margin-left: var(--columnGap);
   margin-top: calc(var(--columnGap) * -1);
   box-shadow: 0 3rem 3rem -1.5rem rgba(black, 0.1);
+
   @include screen($screenXl) {
     grid-column: 3/5;
     grid-row: 1/5;

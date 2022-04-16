@@ -1,16 +1,13 @@
 <template>
   <teleport to="#sidebar-container">
     <transition name="slide-left">
-      <aside v-if="open" :class="[{ heightAuto: heightAuto }, width]">
+      <aside v-if="open" :class="[{ heightAuto }, width]">
         <Panel bg="match" size="xl">
-          <button
-            @click="$emit('close')"
-            style="position: absolute; top: 0; right: 0; padding: 1.3rem"
-          >
+          <button @click="$emit('close')" class="close">
             <Icon size="md" name="cross" />
           </button>
 
-          <slot></slot>
+          <slot />
 
           <template v-if="!hideFooter" #footer>
             <div class="flex jce mt-a">
@@ -107,6 +104,7 @@ aside {
 
   &.lg {
     width: toRem(1000);
+
     @include screen($screenMd) {
       width: 100%;
       padding: 1rem;
@@ -115,11 +113,13 @@ aside {
 
   &.md {
     width: toRem(500);
+
     @include screen($screenMd) {
       width: 100%;
       padding: 1rem;
     }
   }
+
   &.w-auto {
     width: auto !important;
   }
@@ -134,5 +134,12 @@ aside {
   z-index: 999;
   background: cl("grey3", 0.8);
   cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.3rem;
 }
 </style>

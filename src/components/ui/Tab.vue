@@ -1,5 +1,5 @@
 <template>
-  <div class="tab" :class="`${theme} ${size}`">
+  <div class="tab" :class="`tab--${theme} tab--${size}`">
     <Icon size="sm" :name="icon" />
   </div>
 </template>
@@ -19,10 +19,16 @@ export default {
     theme: {
       type: String,
       default: "default",
+      validator: function (value) {
+        return ["default", "accent"].indexOf(value) !== -1;
+      },
     },
     size: {
       type: String,
       default: "md",
+      validator: function (value) {
+        return ["sm", "md"].indexOf(value) !== -1;
+      },
     },
   },
 };
@@ -39,11 +45,13 @@ export default {
   justify-content: center;
   align-items: center;
   color: cl("grey4");
-  &.accent {
+
+  &--accent {
     background: cl("accent");
     color: #fff;
   }
-  &.sm {
+
+  &--sm {
     width: toRem(40);
   }
 }
