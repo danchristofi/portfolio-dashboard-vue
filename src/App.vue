@@ -51,6 +51,21 @@
     </Container>
 
     <SiteFooter />
+
+    <div class="code-prompt">
+      <a
+        target="_blank"
+        href="https://github.com/danchristofi/portfolio-dashboard-vue"
+      >
+        See Vue.js Code
+      </a>
+      <a
+        target="_blank"
+        href="https://github.com/danchristofi/portfolio-dashboard-next"
+      >
+        See Next.js Code
+      </a>
+    </div>
   </main>
 
   <CustomiseHomepageSidebar />
@@ -143,6 +158,23 @@ onUnmounted(() => {
   background: cl("grey10");
   @include dark() {
     background: cl("grey2", 0.2);
+  }
+}
+
+.code-prompt {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background: cl("bodyBg");
+  padding: 1rem 1.5rem;
+  border-radius: var(--rad);
+  border: 1px solid cl("contrast", 0.1);
+  a {
+    text-decoration: underline;
+    & + a {
+      margin-left: 1rem;
+    }
   }
 }
 </style>
