@@ -70,7 +70,6 @@ section {
   align-items: center;
   flex-direction: column;
   padding-top: var(--headerHeight);
-  min-height: calc(100vh - var(--headerHeight));
 
   @include screen($screenMd) {
     padding-top: var(--spV);
